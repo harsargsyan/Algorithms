@@ -8,6 +8,5 @@ namespace Algorithms.Sorting
 {
     internal class SelectionSort
     {
-        // comment
     }
 }
