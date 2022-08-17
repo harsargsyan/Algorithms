@@ -2,9 +2,9 @@
 
 namespace Algorithms.Sorting
 {
-    class Bubble
+    class BubbleSort
     {
-        internal static void BubbleSort(List<int> li)
+        internal static void Bubble(List<int> li)
         {
             for (int i = 0; i < li.Count; i++)
             {

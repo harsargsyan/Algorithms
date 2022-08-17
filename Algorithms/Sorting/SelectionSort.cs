@@ -2,9 +2,9 @@
 
 namespace Algorithms.Sorting
 {
-    class Selection
+    class SelectionSort
     {
-        internal static void SelectionSort(List<int> li)
+        internal static void Selection(List<int> li)
         {
             for (int i = 0; i < li.Count; i++)
             {
