@@ -2,6 +2,10 @@
 
 namespace Algorithms.Sorting
 {
+    /**
+     * time complexity of this sort is
+     * (n-1) + (n-2) + ... + 1 = O(n^2) 
+     */
     class BubbleSort
     {
         internal static void Bubble(List<int> li)
