@@ -14,7 +14,7 @@
                         minIndex = j;
                     }
                 }
-                Extencion.Swap(li, minIndex, i);
+                ListExtension.Swap(li, minIndex, i);
             }
         }
         
@@ -29,7 +29,7 @@
         }
     }
 
-    static class Extencion
+    static class ListExtension
     {
         internal static void Swap<T>(this List<T> list, int i, int j)
         {
