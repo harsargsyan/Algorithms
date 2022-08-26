@@ -8,9 +8,20 @@
      */
     class Merge
     {
-        internal static void MergeSort(List<int> li)
+        internal static void MergeSort(ref List<int> li)
         {
-
+            if (li.Count <= 1)
+                return;
+            List<int> left = new List<int>();
+            List<int> right = new List<int>();
+            int half = li.Count / 2;
+            for (int i = 0; i < half; i++)
+                left.Add(li[i]);
+            for (int j = half; j < li.Count; j++)
+                right.Add(li[j]);
+            MergeSort(ref left);
+            MergeSort(ref right);
+            li = MergeLists(left, right);
         }
 
         internal static List<int> MergeLists(List<int> l1, List<int> l2)
@@ -20,14 +31,14 @@
             while (i < l1.Count && j < l2.Count)
             {
                 if (l1[i] < l2[j])
-                {
                     merged.Add(l1[i++]);
-                }
                 else
-                {
                     merged.Add(l2[j++]);
-                }
             }
+            while (i < l1.Count)
+                merged.Add(l1[i++]);
+            while (j < l2.Count)
+                merged.Add(l2[j++]);
             return merged;
         }
     }

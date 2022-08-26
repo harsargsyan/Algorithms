@@ -6,14 +6,13 @@ namespace Algorithms
     {
         static void Main()
         {
-            List<int> list = new List<int>() { 1,5,8 };
-            List<int> list2 = new List<int>() { 3,4,6,9 };
+            List<int> list = new List<int>() { 5, 0, 1, 6, 9, 2, 4, 7, 3, 8 };
             //Selection.SelectionSort(list);
             //Bubble.BubbleSort(list);
             //Insertion.InsertionSort(list);
             //Counting.CountingSort(list);
-            List<int> merged = Merge.MergeLists(list, list2);
-            foreach (int i in merged)
+            Merge.MergeSort(ref list);
+            foreach (int i in list)
             {
                 Console.Write($" {i} ");
             }
