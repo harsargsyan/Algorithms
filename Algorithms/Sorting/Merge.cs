@@ -8,6 +8,10 @@
      */
     class Merge
     {
+        /**
+         * split an array into two parts recursively
+         * until the length is 1
+         */
         internal static void MergeSort(ref List<int> li)
         {
             if (li.Count <= 1)
@@ -24,6 +28,9 @@
             li = MergeLists(left, right);
         }
 
+        /**
+         * merge 2 sorted lists
+         */
         internal static List<int> MergeLists(List<int> l1, List<int> l2)
         {
             List<int> merged = new List<int>();
