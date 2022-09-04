@@ -18,7 +18,7 @@ namespace Algorithms.Sorting
                     if (li[j] < li[j-1])
                     {
                         isSorted = false;
-                        ListExtension.Swap(li, j, j-1);
+                        li.Swap(j, j-1);
                     }
                 }
                 if (isSorted)

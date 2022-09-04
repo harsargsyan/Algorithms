@@ -12,7 +12,7 @@ namespace Algorithms
             //Insertion.InsertionSort(list);
             //Counting.CountingSort(list);
             //Merge.MergeSort(ref list);
-            Quick.QuickSort(ref list);
+            //Quick.QuickSort(ref list);
             foreach (int i in list)
             {
                 Console.Write($" {i} ");

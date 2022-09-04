@@ -16,11 +16,9 @@ namespace Algorithms.Sorting
                 for (int j = i + 1; j < li.Count; j++)
                 {
                     if (li[j] < li[minIndex])
-                    {
                         minIndex = j;
-                    }
                 }
-                ListExtension.Swap(li, minIndex, i);
+                li.Swap(minIndex, i);
             }
         }
     }
