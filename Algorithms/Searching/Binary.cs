@@ -1,5 +1,9 @@
 ﻿namespace Algorithms.Searching
 {
+    /**
+     * time complexity of this search
+     * algorithm is O(log(n))
+     */
     class Binary
     {
         internal static bool BinarySearch(ref List<int> li, int num)
