@@ -23,7 +23,6 @@
                 if (li[mid] > num)
                 {
                     endIndex = mid - 1;
-                    continue;
                 }
             }
             return false;
