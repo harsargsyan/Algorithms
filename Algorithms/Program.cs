@@ -1,4 +1,5 @@
-﻿using Algorithms.Sorting;
+﻿using Algorithms.DynamicProgramming;
+using Algorithms.Sorting;
 using Algorithms.Searching;
 
 namespace Algorithms
