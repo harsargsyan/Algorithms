@@ -8,45 +8,49 @@
      */
     class Merge
     {
-        /**
-         * split an array into two parts recursively
-         * until the length is 1
-         */
-        internal static void MergeSort(ref List<int> li)
+        internal static List<int> MergeSort(List<int> li)
         {
             if (li.Count <= 1)
-                return;
-            List<int> left = new List<int>();
-            List<int> right = new List<int>();
-            int half = li.Count / 2;
-            for (int i = 0; i < half; i++)
-                left.Add(li[i]);
-            for (int j = half; j < li.Count; j++)
-                right.Add(li[j]);
-            MergeSort(ref left);
-            MergeSort(ref right);
-            li = MergeLists(left, right);
-        }
-
-        /**
-         * merge 2 sorted lists
-         */
-        internal static List<int> MergeLists(List<int> l1, List<int> l2)
-        {
-            List<int> merged = new List<int>();
-            int i = 0, j = 0;
-            while (i < l1.Count && j < l2.Count)
+                return li;
+            
+            int[] arr = new int[li.Count];
+            
+            void DivideRange(int low, int high)
             {
-                if (l1[i] < l2[j])
-                    merged.Add(l1[i++]);
-                else
-                    merged.Add(l2[j++]);
+                if (low >= high) 
+                    return;
+                
+                var mid = (low + high) / 2;
+                DivideRange(low, mid);
+                DivideRange(mid + 1, high);
+                MergeRange(low, mid, high);
             }
-            while (i < l1.Count)
-                merged.Add(l1[i++]);
-            while (j < l2.Count)
-                merged.Add(l2[j++]);
-            return merged;
+            
+            void MergeRange(int low, int mid, int high)
+            {
+                for (var k = low; k <= high; k++)
+                {
+                    arr[k] = li[k];
+                }
+                
+                int i = low;
+                int j = mid + 1;
+                
+                for (var k = low; k <= high; k++)
+                {
+                    if (i > mid)
+                        li[k] = arr[j++];
+                    else if (j > high)
+                        li[k] = arr[i++];
+                    else if (arr[i] <= arr[j])
+                        li[k] = arr[i++];
+                    else
+                        li[k] = arr[j++];
+                }
+            }
+            
+            DivideRange(0, li.Count - 1);
+            return li;
         }
     }
 }
