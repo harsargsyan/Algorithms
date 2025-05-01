@@ -33,19 +33,19 @@
                     arr[k] = li[k];
                 }
                 
-                int i = start;
-                int j = mid + 1;
+                int left = start;
+                int right = mid + 1;
                 
                 for (var k = start; k <= end; k++)
                 {
-                    if (i > mid)
-                        li[k] = arr[j++];
-                    else if (j > end)
-                        li[k] = arr[i++];
-                    else if (arr[i] <= arr[j])
-                        li[k] = arr[i++];
+                    if (left > mid)
+                        li[k] = arr[right++];
+                    else if (right > end)
+                        li[k] = arr[left++];
+                    else if (arr[left] <= arr[right])
+                        li[k] = arr[left++];
                     else
-                        li[k] = arr[j++];
+                        li[k] = arr[right++];
                 }
             }
             
