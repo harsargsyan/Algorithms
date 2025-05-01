@@ -15,32 +15,32 @@
             
             int[] arr = new int[li.Count];
             
-            void DivideRange(int low, int high)
+            void DivideRange(int start, int end)
             {
-                if (low >= high) 
+                if (start == end) 
                     return;
                 
-                var mid = (low + high) / 2;
-                DivideRange(low, mid);
-                DivideRange(mid + 1, high);
-                MergeRange(low, mid, high);
+                var mid = (start + end) / 2;
+                DivideRange(start, mid);
+                DivideRange(mid + 1, end);
+                MergeRange(start, mid, end);
             }
             
-            void MergeRange(int low, int mid, int high)
+            void MergeRange(int start, int mid, int end)
             {
-                for (var k = low; k <= high; k++)
+                for (var k = start; k <= end; k++)
                 {
                     arr[k] = li[k];
                 }
                 
-                int i = low;
+                int i = start;
                 int j = mid + 1;
                 
-                for (var k = low; k <= high; k++)
+                for (var k = start; k <= end; k++)
                 {
                     if (i > mid)
                         li[k] = arr[j++];
-                    else if (j > high)
+                    else if (j > end)
                         li[k] = arr[i++];
                     else if (arr[i] <= arr[j])
                         li[k] = arr[i++];

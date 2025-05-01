@@ -9,32 +9,32 @@ namespace Algorithms.Sorting
      */
     class Quick
     {
-        private static void QuickSort(ref List<int> li, int i, int n)
-        {
-            if (i == n) 
-                return;
-            int pivot = Partition(li, i, n); // (i .. pivot) < pivot | (pivot+1 .. n) >= pivot
-            // call the method recursively for the both parts
-            QuickSort(ref li, i, pivot);
-            QuickSort(ref li, pivot+1, n);
-        }
-
         internal static void QuickSort(ref List<int> li)
         {
             QuickSort(ref li, 0, li.Count);
         }
-
-        private static int Partition(List<int> li, int i, int n)
+        
+        private static void QuickSort(ref List<int> li, int start, int end)
         {
-            int pivot = i;
-            int s1Index = i; // for num < pivot segment
-            int s2Index = i; // for num >= pivot segment
+            if (start == end) 
+                return;
+            int pivot = Partition(li, start, end); // (start .. pivot) < pivot | (pivot+1 .. end) >= pivot
+            // call the method recursively for the both parts
+            QuickSort(ref li, start, pivot);
+            QuickSort(ref li, pivot+1, end);
+        }
+
+        private static int Partition(List<int> li, int startIndex, int endIndex)
+        {
+            int pivot = startIndex;
+            int s1Index = startIndex; // for num < pivot segment
+            int s2Index = startIndex; // for num >= pivot segment
             // e.g.
             // 27      | 38 12 39 27 16
             // pivot
             // s1Index
             // s2Index
-            for (int k = i+1; k < n; k++)
+            for (int k = startIndex+1; k < endIndex; k++)
             {
                 if (li[k] >= li[pivot])
                     s2Index++;
