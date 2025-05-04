@@ -1,4 +1,5 @@
-﻿using Algorithms.DynamicProgramming;
+﻿using System.Globalization;
+using Algorithms.DynamicProgramming;
 using Algorithms.Sorting;
 using Algorithms.Searching;
 
@@ -16,6 +17,8 @@ namespace Algorithms
             //
             // Quick.QuickSort(ref list);
             // Console.WriteLine(string.Join(", ", list));
+            
+            // Console.WriteLine(CoinChangeSolver.CoinChange(new int[] { 1, 2, 5 }, 11));
             
         }
     }
