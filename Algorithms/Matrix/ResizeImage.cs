@@ -2,6 +2,11 @@
 
 public class ResizeImage
 {
+    /// <summary>
+    /// Resizes a grayscale image using nearest-neighbor interpolation.
+    /// Time Complexity: O(newHeight × newWidth)
+    /// Space Complexity: O(newHeight × newWidth)
+    /// </summary>
     public static byte[,] ResizeNearestNeighbor(byte[,] input, int newHeight, int newWidth)
     {
         int originalHeight = input.GetLength(0);
